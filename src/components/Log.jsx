@@ -1,7 +1,12 @@
-export const Log = () => {
+/* eslint-disable react/prop-types */
+export const Log = ({ turns }) => {
   return (
     <ol className="log">
-
+      {turns.map(turn => (
+        <li key={`${turn.square.row}${turn.square.col}`}>
+          {turn.player} selected {turn.square.row},{turn.square.col}
+        </li>
+      ))}
     </ol>
   )
 }
